@@ -26,7 +26,10 @@ class Sommet
         int Getpuissance() { return m_puissance; }
         void Setpuissance(int val) { m_puissance = val; }
 
+        ///Methode
+        void remplissagePuissance();
 
+        void ajoutLiaison(int sommetA, int poid);
 };
 
 #endif // SOMMET_H

@@ -26,6 +26,12 @@ class Graphe
         std::vector<Sommet*> GetvecSommet() { return m_vecSommet; }
         void SetvecSommet(std::vector<Sommet*> val) { m_vecSommet = val; }
 
+        ///Methodes
+
+        void ajoutSommet(int numero);
+
+        void ajoutLiaisonDeuxSommet(int numeroD, int numeroA, int poid);
+
 };
 
 #endif // GRAPHE_H

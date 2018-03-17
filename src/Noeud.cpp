@@ -1,6 +1,6 @@
 #include "Noeud.h"
 
-Noeud::Noeud()
+Noeud::Noeud(): m_pNext(NULL)
 {
     //ctor
 }

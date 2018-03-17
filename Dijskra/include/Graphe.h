@@ -32,6 +32,8 @@ class Graphe
 
         void ajoutLiaisonDeuxSommet(int numeroD, int numeroA, int poid);
 
+        void chargementFichier();
+
 };
 
 #endif // GRAPHE_H

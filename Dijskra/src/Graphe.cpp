@@ -41,3 +41,43 @@ Graphe::~Graphe()
         m_vecSommet[i]->ajoutLiaison(numeroA, poid);
      }
  }
+
+
+ void Graphe::chargementFichier(){
+
+     if(m_nomFichier == ""){
+        std::cout << "Pas de nom de fichier a charger dsl \n";
+     }
+     else{
+
+        std::ifstream fichierSauvegarde(m_nomFichier, std::ios::in);
+
+        if(!fichierSauvegarde == NULL){
+
+            fichierSauvegarde >> m_ordreGraphe;
+
+            for(int i = 0; i < m_ordreGraphe; i++){
+                ajoutSommet(i);
+            }
+
+            int poid;
+
+            for(int x = 0; x < m_ordreGraphe; x++){
+                for(int y = 0; y < m_ordreGraphe; y++){
+                    fichierSauvegarde >> poid;
+                    if(poid != 0){
+                        ajoutLiaisonDeuxSommet(x,y,poid);
+                    }
+                }
+            }
+            fichierSauvegarde.close();
+        }
+        else{
+            std::cout << "Erreur ouvertue fichier sauvegarde\n";
+        }
+
+
+     }
+
+
+ }

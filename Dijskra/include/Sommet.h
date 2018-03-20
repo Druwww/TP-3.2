@@ -30,6 +30,8 @@ class Sommet
         void remplissagePuissance();
 
         void ajoutLiaison(int sommetA, int poid);
+
+        void affichageLiaisons();
 };
 
 #endif // SOMMET_H

@@ -7,12 +7,18 @@ int main()
     std::cout << "Hello Correcteur\n";
 
 
-    Graphe g1("lol");
+    Graphe g1("sauvegarde.txt");
 
-    g1.ajoutSommet(1);
-    g1.ajoutSommet(2);
+    g1.chargementFichier();
 
-    g1.ajoutLiaisonDeuxSommet(1,2,3);
+    for(auto elem : g1.GetvecSommet()){
+
+        elem->affichageLiaisons();
+    }
+
+    std::cout << "\n\n";
+
+    g1.algorithmeArbrePetitDji();
 
     return 0;
 }

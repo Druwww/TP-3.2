@@ -16,5 +16,9 @@ int main()
         elem->affichageLiaisons();
     }
 
+    std::cout << "\n\n";
+
+    g1.algorithmeArbrePetitDji();
+
     return 0;
 }

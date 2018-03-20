@@ -34,6 +34,11 @@ class Graphe
 
         void chargementFichier();
 
+        //retourne vrai si un sommet n est pas marque
+        bool verificationMarquageGraphe();
+
+        void algorithmeArbrePetitDji();
+
 };
 
 #endif // GRAPHE_H

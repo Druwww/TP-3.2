@@ -45,6 +45,8 @@ Graphe::~Graphe()
 
  void Graphe::chargementFichier(){
 
+
+
      if(m_nomFichier == ""){
         std::cout << "Pas de nom de fichier a charger dsl \n";
      }
@@ -54,13 +56,16 @@ Graphe::~Graphe()
 
         if(!fichierSauvegarde == NULL){
 
-            fichierSauvegarde >> m_ordreGraphe;
+            int ordre;
+            fichierSauvegarde >> ordre;
 
-            for(int i = 0; i < m_ordreGraphe; i++){
+            for(int i = 0; i < ordre; i++){
                 ajoutSommet(i);
             }
 
             int poid;
+
+            std::cout << "coucou";
 
             for(int x = 0; x < m_ordreGraphe; x++){
                 for(int y = 0; y < m_ordreGraphe; y++){
@@ -78,6 +83,8 @@ Graphe::~Graphe()
 
 
      }
+
+
 
 
  }

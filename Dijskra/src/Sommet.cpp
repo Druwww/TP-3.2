@@ -43,3 +43,16 @@ void Sommet::ajoutLiaison(int sommetA, int poid){
     m_puissance++;
 
 }
+
+void Sommet::affichageLiaisons(){
+
+    Noeud* pNoeudEtude = m_teteNoeud;
+
+    std::cout << "Le sommet " << m_numero << " est lier avec : \n";
+
+    while(pNoeudEtude->GetpNext() != NULL){
+        std::cout << "\tLiee avec le sommet : " << pNoeudEtude->GetNumeroPrecedent() << "\t avec un poid de : " << pNoeudEtude->Getpoid() <<"\n";
+        pNoeudEtude = pNoeudEtude->GetpNext();
+    }
+
+}

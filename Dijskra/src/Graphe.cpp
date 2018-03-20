@@ -92,32 +92,45 @@ Graphe::~Graphe()
 
     std::cout << "\n\nDEBUT\n\n";
 
+
+    //On pars du sommet 0
     m_vecSommet[0]->SetPoidCumule(0);
 
+    //initialisation des stats
     int sommetEtude = 0;
     int cumuleArbre = 0;
 
+    //On va repeter nm sommet fois afin d etre sur de marquer et passer sur tout les sommet
     for(int j = 0; j < m_ordreGraphe; j++){
+
+        //On marque le sommet pr eviter les cycle
         m_vecSommet[sommetEtude]->SetMarque(true);
 
+        //Si on est pas sur le sommet de depart
         if(sommetEtude != 0){
+            //On affiche la liaison choisit par l algo du sommet etudier
             std::cout << "Liaison : " << sommetEtude << " & " << m_vecSommet[sommetEtude]->GetAntecedantGraphe() << "\t\t pour poid cumul : " << m_vecSommet[sommetEtude]->GetPoidCumule() << "\n";
+            //Ajoute le poids de l arete au cumule de l arbre
             cumuleArbre += m_vecSommet[sommetEtude]->poidLiaisonAvec(m_vecSommet[sommetEtude]->GetAntecedantGraphe());
         }
 
+        //On va parcourire toutes les liasion du sommet etudier
         Noeud* pNoeudEtude = m_vecSommet[sommetEtude]->GetteteNoeud();
-
         for(int i = 0; i < m_vecSommet[sommetEtude]->Getpuissance(); i++){
 
+            //On passe au noeud suivant
             pNoeudEtude = pNoeudEtude->GetpNext();
 
+            //Si il est relier a un sommet non marque et dont le chemin pour y acceder et plus court
             if(m_vecSommet[pNoeudEtude->GetNumeroPrecedent()]->GetPoidCumule() > m_vecSommet[sommetEtude]->GetPoidCumule() + pNoeudEtude->Getpoid() && !m_vecSommet[pNoeudEtude->GetNumeroPrecedent()]->GetMarque()){
+                //On remplasse son cumule par le nouveau plus faible et on change son sommet precedent
                 m_vecSommet[pNoeudEtude->GetNumeroPrecedent()]->SetPoidCumule(m_vecSommet[sommetEtude]->GetPoidCumule() + pNoeudEtude->Getpoid());
                 m_vecSommet[pNoeudEtude->GetNumeroPrecedent()]->SetAntecedantGraphe(sommetEtude);
             }
         }
 
 
+        //On va recuperer le sommet non marque avec le cumule le plus bas (merci l algo)
         int cumuleBas = INFINI_MAX;
 
         for(int i = 0; i < m_ordreGraphe; i++){
@@ -129,6 +142,8 @@ Graphe::~Graphe()
 
     }
 
+
+    //fin algo
     std::cout << "\n Poid total de l arbre : " << cumuleArbre;
 
     std::cout << "\n\nFIN\n\n";

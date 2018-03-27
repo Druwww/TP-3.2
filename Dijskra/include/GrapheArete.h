@@ -7,11 +7,12 @@
 class GrapheArete
 {
     private:
+        int m_nbSommet;
         std::string m_nomFichier;
         int m_nbArete;
         std::vector<Arete*> m_vecArete;
 
-        int m_nbSommet;
+
 
     public:
         GrapheArete();

@@ -7,7 +7,9 @@ int main()
 {
     std::cout << "Hello Correcteur\n";
 
-    /*
+
+    std::cout << "\n########################################################################\n\tDJISKRA\n\n";
+
     Graphe g1("sauvegarde.txt");
 
     g1.chargementFichier();
@@ -20,7 +22,8 @@ int main()
     std::cout << "\n\n";
 
     g1.algorithmeArbrePetitDji();
-    */
+
+     std::cout << "\n########################################################################\n\tKRUSKA\n\n";
 
     GrapheArete g2(std::string("sauvegarde2.txt"));
 

@@ -103,42 +103,48 @@ void GrapheArete::algoKruskal(){
 
     trieVecteurArete();
 
-
-
     int nbAreteSelec = 0;
 
     int cumulePoid = 0;
 
+    //Creation et initialisation du tableau de liaison pour l algo
     std::vector<int> vecCycle;
-
     for(int i = 0; i < m_nbSommet; i++){
         vecCycle.push_back(i);
-
     }
 
-
+    //On parcour toutes les aretes
     for(int i = 0; i < m_nbArete; i++){
 
+        //Si dans une arete, le sommet de depart et d arriver n ont pas le meme numero de liaison : ne vont pas creer de cycle
         if(vecCycle[m_vecArete[i]->GetsommetD()] != vecCycle[m_vecArete[i]->GetsommetA()]){
 
+            //On marque, affiche, augmente le nombre d arrete selectionee
             m_vecArete[i]->Setmarque(true);
             nbAreteSelec++;
             cumulePoid += m_vecArete[i]->Getpoid();
 
+            //On prend le numero de liaison du sommet d arriver : c est celui qu on va remplacer dans le tableau de liaison
             int numeroChangement = vecCycle[m_vecArete[i]->GetsommetA()];
 
+            //On parcour tout le tableau de liaison
             for(int j = 0; j < m_nbSommet; j++){
+                //Si le numero de liaison correspond au numero a changer
                 if(vecCycle[j] == numeroChangement){
-                    vecCycle[j] = m_vecArete[i]->GetsommetD();
+                    //On le remplace par le numero de liaison du sommet de depart
+                    vecCycle[j] = vecCycle[m_vecArete[i]->GetsommetD()];
                 }
             }
-
         }
+
+        //Si on a notre nombre d arete correspondant
         if(nbAreteSelec == m_nbSommet - 1){
+            //on sort de la boucle for
             break;
         }
     }
 
+    //on affiche nos aretes marque (notre sous arbre)
     affichageAretesMarque();
 
     std::cout << "\n\n\tPoid de l arbre : " << cumulePoid << "\n\n";

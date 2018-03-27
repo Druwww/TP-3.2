@@ -15,5 +15,5 @@ Arete::Arete(int sommetD, int sommetA, int poid): m_sommetD(sommetD), m_sommetA(
 }
 
 void Arete::affichage(){
-    std::cout << "\tDepart : " << m_sommetD << "\t Arriver : " << m_sommetA << "\tPoid : " << m_poid << "\n";
+    std::cout << "\tDepart : " << m_sommetD << "\t Arrivee : " << m_sommetA << "\tPoids : " << m_poid << "\n";
 }

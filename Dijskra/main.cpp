@@ -26,7 +26,12 @@ int main()
 
     g2.chargementFichier();
 
+    g2.trieVecteurArete();
+
     g2.affichageAretes();
+
+
+    g2.algoKruskal();
 
     return 0;
 }

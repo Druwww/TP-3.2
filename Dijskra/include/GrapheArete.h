@@ -34,6 +34,14 @@ class GrapheArete
 
         void affichageAretes();
 
+        void affichageAretesMarque();
+
+        void trieVecteurArete();
+
+        void algoKruskal();
+
+        void resetMarque();
+
 };
 
 #endif // GRAPHEARETE_H

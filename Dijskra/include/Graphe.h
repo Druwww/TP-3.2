@@ -32,6 +32,13 @@ class Graphe
 
         void ajoutLiaisonDeuxSommet(int numeroD, int numeroA, int poid);
 
+        void chargementFichier();
+
+        //retourne vrai si un sommet n est pas marque
+        bool verificationMarquageGraphe();
+
+        void algorithmeArbrePetitDji();
+
 };
 
 #endif // GRAPHE_H

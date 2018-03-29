@@ -35,11 +35,15 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="headers.h" />
+		<Unit filename="include/Arete.h" />
 		<Unit filename="include/Graphe.h" />
+		<Unit filename="include/GrapheArete.h" />
 		<Unit filename="include/Noeud.h" />
 		<Unit filename="include/Sommet.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Arete.cpp" />
 		<Unit filename="src/Graphe.cpp" />
+		<Unit filename="src/GrapheArete.cpp" />
 		<Unit filename="src/Noeud.cpp" />
 		<Unit filename="src/Sommet.cpp" />
 		<Extensions>

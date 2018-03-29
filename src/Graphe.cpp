@@ -109,7 +109,7 @@ Graphe::~Graphe()
         //Si on est pas sur le sommet de depart
         if(sommetEtude != 0){
             //On affiche la liaison choisit par l algo du sommet etudier
-            std::cout << "Liaison : " << sommetEtude << " & " << m_vecSommet[sommetEtude]->GetAntecedantGraphe() << "\t\t pour poid cumul : " << m_vecSommet[sommetEtude]->GetPoidCumule() << "\n";
+            std::cout << "Liaison : " << sommetEtude << " & " << m_vecSommet[sommetEtude]->GetAntecedantGraphe() << "\t\t pour poids cumul : " << m_vecSommet[sommetEtude]->GetPoidCumule() << "\n";
             //Ajoute le poids de l arete au cumule de l arbre
             cumuleArbre += m_vecSommet[sommetEtude]->poidLiaisonAvec(m_vecSommet[sommetEtude]->GetAntecedantGraphe());
         }
@@ -144,7 +144,7 @@ Graphe::~Graphe()
 
 
     //fin algo
-    std::cout << "\n Poid total de l arbre : " << cumuleArbre;
+    std::cout << "\n Poids total de l arbre : " << cumuleArbre;
 
     std::cout << "\n\nFIN\n\n";
  }

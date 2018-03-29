@@ -70,10 +70,10 @@ void Sommet::affichageLiaisons(){
 
     Noeud* pNoeudEtude = m_teteNoeud;
 
-    std::cout << "Le sommet " << m_numero << " est lier avec : \n";
+    std::cout << "Le sommet " << m_numero << " est lie avec : \n";
 
     while(pNoeudEtude->GetpNext() != NULL){
         pNoeudEtude = pNoeudEtude->GetpNext();
-        std::cout << "\tLiee avec le sommet : " << pNoeudEtude->GetNumeroPrecedent() << "\t avec un poid de : " << pNoeudEtude->Getpoid() <<"\n";
+        std::cout << "\tLie avec le sommet : " << pNoeudEtude->GetNumeroPrecedent() << "\t avec un poids de : " << pNoeudEtude->Getpoid() <<"\n";
     }
 }
